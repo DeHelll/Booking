@@ -3,6 +3,7 @@
 #include <memory>
 #include <vector>
 #include <string>
+#include <random>
 
 class House {
 protected:
@@ -59,18 +60,23 @@ public:
 	}
 
 
-	void displayAvailable() const 
+	void displayAvailable() const
 	{
-		for(const auto& house : houses)
+		std::vector<const House*> available;
+		for (const auto& house : houses)
 		{
 			if (house->available())
-				house->display();
+				available.push_back(house.get());
 		}
 
+
+
+		std::random_device rd;
+		std::mt19937 gen(rd());
+		std::snuffle(available.begin(), available.end(), gen);
+
+		for (const auto* house : available) { house->display(); }
+
+
 	}
-
-
-
-
-
 };
