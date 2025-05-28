@@ -3,7 +3,7 @@
 
 int main()
 {
-    House::RentalSys system;
+    RentalSys system;
     system.addHouse(std::make_unique<House>("123 Main St", 300));
     system.addHouse(std::make_unique<House>("456 Oak Ave", 200));
     int choice;
@@ -15,8 +15,8 @@ int main()
     
     if(choice == 1)
     {
-       system.
-
+        std::cout << "Available houses: " << "\n";
+        system.displayAvailable();
     }
 
 
