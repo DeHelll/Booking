@@ -73,7 +73,11 @@ public:
 
 		std::random_device rd;
 		std::mt19937 gen(rd());
-		std::snuffle(available.begin(), available.end(), gen);
+		for (int i = available.size() - 1; i > 0; --i) {
+			std::uniform_int_distribution<int> dist(0, i);
+			int j = dist(g);
+			std::swap(available[i], available[j]);
+		}
 
 		for (const auto* house : available) { house->display(); }
 
