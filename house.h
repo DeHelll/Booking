@@ -59,9 +59,7 @@ public:
 		return false;
 
 	}
-	const std::vector<std::unique_ptr<House>>& getHouses() const {
-		return houses;
-	}
+	
 
 	void displayAvailable() const
 	{
