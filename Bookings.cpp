@@ -14,7 +14,7 @@ int main()
 
         if (choice == 1)
         {
-            std::cout << "Available houses: " << "\n";
+            std::cout << "Available houses: " << "\n"<<std::endl;
             system.displayAvailable();
         }
         else if (choice == 2)
@@ -27,10 +27,10 @@ int main()
             if (system.rentHouse(_address)) { std::cout << "Rented succesfully!\n"; }
             else { std::cout << "Rental failed!\n"; }
         }
-
+        else break;
     }
     
     
     
-
+    return 0;
  }
