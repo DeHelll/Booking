@@ -31,6 +31,21 @@ public:
 		return false;
 	}
 
+	void release() { isAvailable = true; }
+    const std::string& getAddress() const { return address;}
+	bool available() const { return isAvailable; }
+
+	class RentalSys {
+		std::vector < std::unique_ptr<House>> houses;
+
+
+
+
+
+	};
+
+
+
 
 
 };
