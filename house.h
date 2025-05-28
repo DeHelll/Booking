@@ -38,7 +38,21 @@ public:
 	class RentalSys {
 		std::vector < std::unique_ptr<House>> houses;
 
+	public:
+		void addHouse(std::unique_ptr<House> house) { houses.push_back(std::move(house)); }
+ 
+		bool rentHouse(const std::string& targetAddress) 
+		{
+			for (auto& house : houses) 
+			{
+				if(house->available() && house->getAddress() == targetAddress)
+				{
+					return house->rent();
+				}
+				return false;
+			}
 
+		}
 
 
 
