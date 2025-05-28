@@ -49,8 +49,8 @@ public:
 				{
 					return house->rent();
 				}
-				return false;
 			}
+			return false; 
 
 		}
 
