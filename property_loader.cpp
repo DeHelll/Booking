@@ -15,4 +15,3 @@ void loadSampleProperties(RentalSys& system)
     system.addHouse(std::make_unique<House>("808 Palm Cir", 330));
     system.addHouse(std::make_unique<House>("909 Juniper Way", 410));
 }
-}

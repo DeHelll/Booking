@@ -72,14 +72,20 @@ public:
 
 
 		std::random_device rd;
-		std::mt19937 gen(rd());
+		std::mt19937 g(rd());
+		int n = available.size();
+
 		for (int i = available.size() - 1; i > 0; --i) {
 			std::uniform_int_distribution<int> dist(0, i);
 			int j = dist(g);
 			std::swap(available[i], available[j]);
 		}
 
-		for (const auto* house : available) { house->display(); }
+		int count = std::min(5, static_cast<int>(available.size()));
+		std::cout << "\nRandomly selected available houses:\n";
+		for (int i = 0; i < count; ++i) {
+			available[i]->display();
+		}
 
 
 	}

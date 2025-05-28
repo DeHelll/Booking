@@ -1,11 +1,12 @@
 ﻿#include <iostream>
 #include "house.h"
+#include "property_loader.h"
 
 int main()
 {
     RentalSys system;
-    system.addHouse(std::make_unique<House>("123 Main St", 300));
-    system.addHouse(std::make_unique<House>("456 Oak Ave", 200));
+    loadSampleProperties(system);
+
     int choice;
     while (true) 
     {
