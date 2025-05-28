@@ -22,7 +22,14 @@ public:
 			<< "\nStatus: " << (isAvailable ? "Available" : "Booked") << "\n\n";
 	}
 
-
+	bool rent() 
+	{
+		if (isAvailable) {
+			isAvailable = false;
+			return true;
+		}
+		return false;
+	}
 
 
 
