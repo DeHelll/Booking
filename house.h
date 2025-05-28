@@ -59,6 +59,16 @@ public:
 	}
 
 
+	void displayAvailable() const 
+	{
+		for(const auto& house : houses)
+		{
+			if (house->available())
+				house->display();
+		}
+
+	}
+
 
 
 
