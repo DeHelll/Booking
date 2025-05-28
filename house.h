@@ -43,6 +43,7 @@ public:
 class RentalSys {
 	std::vector < std::unique_ptr<House>> houses;
 
+
 public:
 	void addHouse(std::unique_ptr<House> house) { houses.push_back(std::move(house)); }
 
@@ -58,7 +59,9 @@ public:
 		return false;
 
 	}
-
+	const std::vector<std::unique_ptr<House>>& getHouses() const {
+		return houses;
+	}
 
 	void displayAvailable() const
 	{
@@ -82,7 +85,7 @@ public:
 		}
 
 		int count = std::min(5, static_cast<int>(available.size()));
-		std::cout << "\nRandomly selected available houses:\n";
+		std::cout << "\nAvailable houses for today: \n";
 		for (int i = 0; i < count; ++i) {
 			available[i]->display();
 		}
