@@ -5,6 +5,8 @@ VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Booking", "Booking.vcxproj", "{8760B303-FF5E-458E-A8D1-92FBF6A19BCE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sample-Test6", "..\Sample-Test6\Sample-Test6.vcxproj", "{1C1B0417-89B0-4294-B68E-E56D906A418F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{8760B303-FF5E-458E-A8D1-92FBF6A19BCE}.Release|x64.Build.0 = Release|x64
 		{8760B303-FF5E-458E-A8D1-92FBF6A19BCE}.Release|x86.ActiveCfg = Release|Win32
 		{8760B303-FF5E-458E-A8D1-92FBF6A19BCE}.Release|x86.Build.0 = Release|Win32
+		{1C1B0417-89B0-4294-B68E-E56D906A418F}.Debug|x64.ActiveCfg = Debug|x64
+		{1C1B0417-89B0-4294-B68E-E56D906A418F}.Debug|x64.Build.0 = Debug|x64
+		{1C1B0417-89B0-4294-B68E-E56D906A418F}.Debug|x86.ActiveCfg = Debug|Win32
+		{1C1B0417-89B0-4294-B68E-E56D906A418F}.Debug|x86.Build.0 = Debug|Win32
+		{1C1B0417-89B0-4294-B68E-E56D906A418F}.Release|x64.ActiveCfg = Release|x64
+		{1C1B0417-89B0-4294-B68E-E56D906A418F}.Release|x64.Build.0 = Release|x64
+		{1C1B0417-89B0-4294-B68E-E56D906A418F}.Release|x86.ActiveCfg = Release|Win32
+		{1C1B0417-89B0-4294-B68E-E56D906A418F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
