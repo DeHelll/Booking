@@ -35,31 +35,29 @@ public:
     const std::string& getAddress() const { return address;}
 	bool available() const { return isAvailable; }
 
-	class RentalSys {
-		std::vector < std::unique_ptr<House>> houses;
 
-	public:
-		void addHouse(std::unique_ptr<House> house) { houses.push_back(std::move(house)); }
- 
-		bool rentHouse(const std::string& targetAddress) 
+
+};
+
+class RentalSys {
+	std::vector < std::unique_ptr<House>> houses;
+
+public:
+	void addHouse(std::unique_ptr<House> house) { houses.push_back(std::move(house)); }
+
+	bool rentHouse(const std::string& targetAddress)
+	{
+		for (auto& house : houses)
 		{
-			for (auto& house : houses) 
+			if (house->available() && house->getAddress() == targetAddress)
 			{
-				if(house->available() && house->getAddress() == targetAddress)
-				{
-					return house->rent();
-				}
+				return house->rent();
 			}
-			return false; 
-
 		}
+		return false;
 
-		
+	}
 
-
-
-
-	};
 
 
 
