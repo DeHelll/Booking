@@ -17,6 +17,9 @@ int main()
     {
         std::cout << "Available houses: " << "\n";
         system.displayAvailable();
+    }else if(choice == 2)
+    {
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     }
 
 
