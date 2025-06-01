@@ -54,6 +54,33 @@ class Apartment : public House {
 
 	};
 
+class Villa : public House {
+	bool hasGarden;
+	bool hasPool;
+
+public:
+	Villa(const std::string& _address, double _pricePerNight, bool _hasGarden, bool _hasPool)
+		: House(_address, _pricePerNight), hasGarden(_hasGarden), hasPool(_hasPool) {}
+
+	void display() const override {
+		std::cout << "Type : Villa\n";
+		House::display();
+		std::cout << "Pool: " << (hasPool ? "Yes" : "No")
+			<< "\nGarden: " << (hasGarden ? "Yes" : "No") << "\n\n";
+	}
+
+};
+
+
+
+
+
+
+
+
+
+
+
 
 
 
