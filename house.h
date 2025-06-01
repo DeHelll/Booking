@@ -71,23 +71,6 @@ public:
 
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 class RentalSys {
 	std::vector < std::unique_ptr<House>> houses;
 
@@ -122,7 +105,7 @@ public:
 
 		std::random_device rd;
 		std::mt19937 g(rd());
-		int n = available.size();
+		std::shuffle(available.begin(), available.end(), g);
 
 		for (int i = available.size() - 1; i > 0; --i) {
 			std::uniform_int_distribution<int> dist(0, i);
