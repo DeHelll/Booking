@@ -19,8 +19,8 @@ public:
 
 	virtual void display() const {
 		std::cout << "Address: " << address
-			<< "\nPrice per night: $" << pricePerNight
-			<< "\nStatus: " << (isAvailable ? "Available" : "Booked") << "\n\n";
+			      << "\nPrice per night: $" << pricePerNight
+			      << "\nStatus: " << (isAvailable ? "Available" : "Booked") << "\n\n";
 	}
 
 	bool rent() 
@@ -35,8 +35,39 @@ public:
 	void release() { isAvailable = true; }
     const std::string& getAddress() const { return address;}
 	bool available() const { return isAvailable; }
+};
 
+class Apartment : public House {
+	int floorNumber;
+	int numberOfRooms;
 
+	public:
+		Apartment(const std::string& _address, double _pricePerNight, int _floorNumber, int _numberOfRooms)
+			: House(_address, _pricePerNight), floorNumber(_floorNumber), numberOfRooms(_numberOfRooms) {}
+
+		void display() const override {
+			std::cout << "Type : Appartment\n";
+			House::display();
+			std::cout << "Floor: " << floorNumber
+				<< "\nRooms: " << numberOfRooms << "\n\n";
+		}
+
+	};
+
+class Villa : public House {
+	bool hasGarden;
+	bool hasPool;
+
+public:
+	Villa(const std::string& _address, double _pricePerNight, bool _hasGarden, bool _hasPool)
+		: House(_address, _pricePerNight), hasGarden(_hasGarden), hasPool(_hasPool) {}
+
+	void display() const override {
+		std::cout << "Type : Villa\n";
+		House::display();
+		std::cout << "Pool: " << (hasPool ? "Yes" : "No")
+			<< "\nGarden: " << (hasGarden ? "Yes" : "No") << "\n\n";
+	}
 
 };
 
@@ -74,13 +105,7 @@ public:
 
 		std::random_device rd;
 		std::mt19937 g(rd());
-		int n = available.size();
-
-		for (int i = available.size() - 1; i > 0; --i) {
-			std::uniform_int_distribution<int> dist(0, i);
-			int j = dist(g);
-			std::swap(available[i], available[j]);
-		}
+		std::shuffle(available.begin(), available.end(), g);
 
 		int count = std::min(5, static_cast<int>(available.size()));
 		std::cout << "\nAvailable houses for today: \n";
