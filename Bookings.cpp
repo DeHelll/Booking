@@ -4,6 +4,8 @@
 
 int main()
 {
+
+   
     RentalSys system;
     loadSampleProperties(system);
 

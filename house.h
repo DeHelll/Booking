@@ -19,8 +19,8 @@ public:
 
 	virtual void display() const {
 		std::cout << "Address: " << address
-			<< "\nPrice per night: $" << pricePerNight
-			<< "\nStatus: " << (isAvailable ? "Available" : "Booked") << "\n\n";
+			      << "\nPrice per night: $" << pricePerNight
+			      << "\nStatus: " << (isAvailable ? "Available" : "Booked") << "\n\n";
 	}
 
 	bool rent() 
@@ -35,10 +35,31 @@ public:
 	void release() { isAvailable = true; }
     const std::string& getAddress() const { return address;}
 	bool available() const { return isAvailable; }
-
-
-
 };
+
+class Apartment : public House {
+	int floorNumber;
+	int numberOfRooms;
+
+	public:
+		Apartment(const std::string& _address, double _pricePerNight, int _floorNumber, int _numberOfRooms)
+			: House(_address, _pricePerNight), floorNumber(_floorNumber), numberOfRooms(_numberOfRooms) {}
+
+		void display() const override {
+			std::cout << "Type : Appartment\n";
+			House::display();
+			std::cout << "Floor: " << floorNumber
+				<< "\nRooms: " << numberOfRooms << "\n\n";
+		}
+
+	};
+
+
+
+
+
+
+
 
 class RentalSys {
 	std::vector < std::unique_ptr<House>> houses;
