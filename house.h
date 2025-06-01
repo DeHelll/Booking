@@ -107,12 +107,6 @@ public:
 		std::mt19937 g(rd());
 		std::shuffle(available.begin(), available.end(), g);
 
-		for (int i = available.size() - 1; i > 0; --i) {
-			std::uniform_int_distribution<int> dist(0, i);
-			int j = dist(g);
-			std::swap(available[i], available[j]);
-		}
-
 		int count = std::min(5, static_cast<int>(available.size()));
 		std::cout << "\nAvailable houses for today: \n";
 		for (int i = 0; i < count; ++i) {
